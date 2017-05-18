@@ -22,11 +22,11 @@
       position: relative;
     }
 
-    h2 {
+    h3 {
       font-family: 'PT Sans Narrow', sans-serif;
       font-size: 18px;
       font-weight: 700;
-      margin: 0 0 10px;
+      margin: 0 0 2px;
       text-align: center;
 	  color:white;
     }
@@ -35,9 +35,11 @@
       position: absolute;
       top: -4px;
 	  left: 0;
+	width:10px;
     }
-	.righ_but {
+	.right_but {
       position: absolute;
+	width: 0px;
       top: -4px;
 	  right: 0;
     }
@@ -55,7 +57,12 @@
       color: #444;
       line-height: 22px;
       text-align: center;
+	
     }
+	td:hover {
+    		color: red;
+		cursor: pointer;
+	}	
 
     tr:first-child td {
       color: #222;

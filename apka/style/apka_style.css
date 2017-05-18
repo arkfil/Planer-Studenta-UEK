@@ -1,0 +1,150 @@
+	
+
+.container {
+
+	position: relative;
+	height:550px;
+	width: 900px;
+	margin-top: 180px;
+	margin-bottom: auto;
+ 	margin-left: auto;
+	margin-right: auto;
+	background-color: #043c82;
+	box-shadow:0 6px 6px -6px #666;
+}
+
+
+.left {
+	margin-left: 0px;
+	float: left;
+	width:200px;
+	display:block;
+	text-align: center;
+	font-family: "Aladin";
+}
+
+.right {
+
+	width:600px;
+    	border-left: 2px solid lightblue;
+	margin-top:20px;
+	height:93%;
+	float:right;
+	text-align:center;
+	color:white;
+}
+
+.events {
+	
+	font-family: "Comic Sans MS";
+}
+.title {
+	margin-top: 0;
+}
+.sthaa{
+	margin-left:15px;
+	margin-right:50px;
+	margin-bottom: 0px;
+	height:340px;
+	
+	background-color: #043c82;
+	overflow:hidden;
+	overflow-y:scroll;
+}
+
+.add {
+	margin-top: 32px;
+	text-align:center;
+}
+button.add_button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #ffffff;
+	padding: 8px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#3482c7 50%,
+		#6c61b8 65%,
+		#2366a1);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#ffffff),
+		color-stop(0.50, #3482c7),
+		color-stop(0.65, #6c61b8),
+		to(#2366a1));
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #0e02b3;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 5px rgba(16,52,161,0.6);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 5px rgba(16,52,161,0.6);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 5px rgba(16,52,161,0.6);
+	text-shadow:
+		0px -1px 3px rgba(8,32,92,0.8),
+		0px 1px 0px rgba(69,46,199,0.3);
+}
+.one {
+
+}
+.two {
+
+	clear: both;
+}
+.three {
+
+	clear: both;
+}
+
+
+.time {
+	width:70px;
+	height:70px;
+	float: left;
+	background-color:blue;
+	margin-top:20px;
+}
+.what {
+	width:400px;
+	height: 70px;
+	float: left;
+	background-color:blue;
+	opacity: 0.5;
+	margin-top:20px;	
+}
+.time_two {
+	width:70px;
+	height:70px;
+	float: left;
+	background-color:purple;
+	margin-top:20px;
+}
+.what_two {
+	width:400px;
+	height: 70px;
+	float: left;
+	background-color:purple;
+	opacity: 0.5;
+	margin-top:20px;	
+}
+.time_three {
+	width:70px;
+	height:70px;
+	float: left;
+	background-color:yellow;
+	margin-top:20px;
+}
+.what_three {
+	width:400px;
+	height: 70px;
+	float: left;
+	background-color:yellow;
+	opacity: 0.5;
+	margin-top:20px;	
+}

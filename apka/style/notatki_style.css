@@ -1,0 +1,22 @@
+.notes_title {
+	color: white;
+	margin-left:90px;
+	font-family: "Comic Sans MS";
+}
+.notepad {
+	width:240px;
+	height:190px;
+	background-color:#64FFDA;
+	margin-left:30px;
+	opacity:0.5;
+}
+.notepad_ex {
+	width: 98%;
+	height: 99%;
+	resize: none;
+	display: block;
+	margin-bottom: 10px;
+    	background-color: transparent;
+	overflow: auto;
+
+}

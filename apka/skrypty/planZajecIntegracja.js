@@ -114,6 +114,17 @@
 				
 			  }
             }
+            
+            dialog.dialog( "close" );
+			      var msc=document.querySelector("#checkedDay").value;
+			      if(msc.length==10)
+					msc=msc.substring(4,5);
+			      else
+					msc=msc.substring(4,4);
+			       wybierzDzien(document.querySelector("#checkedDay").value,document.querySelector("#checkedDay").value.substring(0,3),msc);
+			       	 $( "#okienko_importu" ).css("visibility","hidden");
+			      alert("Plan zostal zainportowany do kalendarza.");
+            
           }
         });
     	

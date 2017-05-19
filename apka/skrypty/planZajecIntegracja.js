@@ -1,16 +1,12 @@
   $( function() {
     var dialog, form,
- 
-      link = $( "#linkHt" ),
- 
+  
     importuj=function() {
 		
 			
-			
-			
-			linkVal=link.value;
-			var strona = "http://v-ie.uek.krakow.pl/~s186287/IntegracjaZKalendarzem/posrednikXml.php/?linkDoPlanu="+linkVal;
-			var planZapi="";
+			link=document.querySelector("#linkHt").value;
+			var strona = "http://v-ie.uek.krakow.pl/~s186287/IntegracjaZKalendarzem/posrednikXml.php/?linkDoPlanu="+link;
+			console.log(strona);
 			$.get(strona, function( kod ) {
 
 			var data="";
@@ -68,19 +64,34 @@
 						}
 						//++i;//}
 						
-						var zajecia = {'date': data, 'startTime': odGodziny, 'endTime': doGodziny,
-					   'eventTitle': opis, 'lokalizacja': "UEK"};
+						var zajecia = {'date': data, 'startTime': odGodziny, 'endTime': doGodziny, 'eventTitle': opis, 'lokalizacja': "UEK"};
 						if (zajecia)
-							console.log(zajecia);
-							//createEvent(zajecia);
+							createEvent(zajecia);
+													//console.log(zajecia);
+
 						break;
 				}
 				
 			}
+			dialog.dialog( "close" );
+			      var msc=document.querySelector("#checkedDay").value;
+			      if(msc.length==10)
+					msc=msc.substring(4,5);
+			      else
+					msc=msc.substring(4,4);
+			       wybierzDzien(document.querySelector("#checkedDay").value,document.querySelector("#checkedDay").value.substring(0,3),msc);
+			       	 $( "#okienko_importu" ).css("visibility","hidden");
+			      alert("Plan zostal zainportowany do kalendarza.");
 			});		
 			
 		  	
     };
+
+    cancelImport=function(){
+
+    	
+    }
+
 	
     dialog = $( "#okienko_importu" ).dialog({
       autoOpen: false,
@@ -134,17 +145,9 @@ function createEvent(eventData) {
       'resource': resource
     });
   
-    // execute the request and do something with response
+    // coś można zrobic po wykonaniu operacji dodania zdarzenia
     request.execute(function(resp) {
       console.log(resp);
-      var msc=document.querySelector("#checkedDay").value;
-      if(msc.length==10)
-		msc=msc.substring(4,5);
-      else
-		msc=msc.substring(4,4);
-       wybierzDzien(document.querySelector("#checkedDay").value,document.querySelector("#checkedDay").value.substring(0,3),msc);
-       	 $( "#okienko_importu" ).css("visibility","hidden");
-      alert("Zdarzenie zostalo dodane do kalendarza.");
     });
 }
 

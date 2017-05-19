@@ -9,8 +9,10 @@
 	<script type="text/javascript" src="./skrypty/kalendarzApp.js"></script>
 	<script type="text/javascript" src="./skrypty/kalendarzController.js"></script>
 	<script type="text/javascript" src="./skrypty/formularz_zdarzenia.js"></script>
-		<script type="text/javascript" src="./skrypty/IntegracjaKalendarz.js"></script>
-		<script type="text/javascript" src="./skrypty/notatki.js"></script>
+	<script type="text/javascript" src="./skrypty/IntegracjaKalendarz.js"></script>
+	<script type="text/javascript" src="./skrypty/notatki.js"></script>
+	<script type="text/javascript" src="./skrypty/planZajecIntegracja.js"></script>
+
 
 
 	<link rel="stylesheet" type="text/css" href="./style/kalendarz_style.css">
@@ -18,6 +20,9 @@
 	<link rel="stylesheet" type="text/css" href="./style/notatki_style.css">
 	<link rel="stylesheet" type="text/css" href="./style/ekran_autoryzacji_style.css">
 	<link rel="stylesheet" type="text/css" href="./style/formularz_zdarzenia_style.css">
+	<link rel="stylesheet" type="text/css" href="./style/okienko_plan_zajec_style.css">
+	
+	
 	
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
@@ -63,13 +68,15 @@
 			</div>
 			<div class="add">
 				<button type="button" name="" value="" class="add_button" id="add_button">Dodaj wydarzenie</button>
+				<button type="button" name="" value="" class="plan_zajec_btn" id="plan_zajec_btn">Importuj plan do kalendarza</button>
+
 			</div>
 			
 		</div>
 	
 	</div>
 	
-<div id="okienko_zdarzenia" title="Tworzenie nowego zdarzenia">
+<div id="okienko_zdarzenia" style="visibility:hidden" title="Tworzenie nowego zdarzenia">
   <form>
     <fieldset>
       <label for="godz_rozpoczecia">Godzina rozpoczecia gg:mm</label>
@@ -82,6 +89,17 @@
     </fieldset>
   </form>
 </div>
+
+<div id="okienko_importu" style="visibility:hidden" title="Import planu zajec UEK do kalendarza Google">
+  <form>
+    <fieldset>
+      <label for="linkHt">Godzina rozpoczecia gg:mm</label>
+      <input type="text" name="linkHt" id="linkHt" value="" class="text ui-widget-content ui-corner-all">
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+    </fieldset>
+  </form>
+</div>
+
 
   <script async defer src="https://apis.google.com/js/api.js"
       onload="this.onload=function(){};handleClientLoad()"

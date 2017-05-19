@@ -1,0 +1,11 @@
+.formularz-importu {
+    background-color:#f2f2f2;
+    z-index:1000;
+    padding: 8px;
+    opacity:0.99;
+    border: none;
+    border-radius: 6px;
+}
+okienko_zdarzenia{
+	visibility: hidden;
+}

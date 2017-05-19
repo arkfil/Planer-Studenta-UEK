@@ -5,15 +5,16 @@
       godz_zakonczenia = $( "#godz_zakonczenia" ),
       opis_zdarzenia = $( "#opis_zdarzenia" ),
 
-
+	
     dodajZdarzenie=function() {
+		
 			var userChoices = getUserInput();
 		 	console.log(userChoices);
 		 	if (userChoices) 
 		  	createEvent(userChoices);
 		  	dialog.dialog( "close" );
     };
- 
+	
     dialog = $( "#okienko_zdarzenia" ).dialog({
       autoOpen: false,
       height: 400,
@@ -21,12 +22,15 @@
       modal: true,
       open: function(event, ui) {
         $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+        	 $( "#okienko_zdarzenia" ).css("visibility","visible");
+
 	  },
       dialogClass: 'formularz-zdarzenia',
       buttons: {
         "Dodaj zdarzenie": dodajZdarzenie,
         Cancel: function() {
           dialog.dialog( "close" );
+          $( "#okienko_zdarzenia" ).css("visibility","hidden");
         }
       }
     });
@@ -84,6 +88,13 @@ function createEvent(eventData) {
     // execute the request and do something with response
     request.execute(function(resp) {
       console.log(resp);
+      var msc=document.querySelector("#checkedDay").value;
+      if(msc.length==10)
+		msc=msc.substring(4,5);
+      else
+		msc=msc.substring(4,4);
+       wybierzDzien(document.querySelector("#checkedDay").value,document.querySelector("#checkedDay").value.substring(0,3),msc);
+       	 $( "#okienko_zdarzenia" ).css("visibility","hidden");
       alert("Zdarzenie zostalo dodane do kalendarza.");
     });
 }

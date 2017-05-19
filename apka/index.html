@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="./skrypty/kalendarzController.js"></script>
 	<script type="text/javascript" src="./skrypty/formularz_zdarzenia.js"></script>
 		<script type="text/javascript" src="./skrypty/IntegracjaKalendarz.js"></script>
+		<script type="text/javascript" src="./skrypty/notatki.js"></script>
 
 
 	<link rel="stylesheet" type="text/css" href="./style/kalendarz_style.css">
@@ -42,7 +43,7 @@
 			</div>
 			<div class="notes">
 				<h1 class="notes_title">Notatnik</h1>
-				<div class="notepad"><textarea class="notepad_ex" cols="40" rows="5"></textarea></div>
+				<div onkeyup="zapiszNotatke();" class="notepad"><textarea class="notepad_ex" id="notepad_ex" cols="40" rows="5"></textarea></div>
 			
 			</div>
 		</div>

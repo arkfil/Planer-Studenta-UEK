@@ -111,6 +111,7 @@ var rok = $( "#rok" ).text();
 function wybierzDzien(id,rok,miesiac){
 	console.log(id);
 	
+	
 	for(var i=1;i<=31;++i){
 		var g = document.getElementById(rok+"-"+miesiac+"-"+i);
 		if(g!=null) g.style.background = "";
@@ -120,14 +121,13 @@ function wybierzDzien(id,rok,miesiac){
 	document.getElementById(id).style.background = "blue";
 	document.getElementById("checkedDay").value = id;
 
-	
 	 gapi.client.calendar.events.list({
           'calendarId': 'primary',
-          'timeMin': (new Date(document.getElementById("checkedDay").value+"T00:00:01.000Z")).toISOString(),
-          'timeMax': (new Date(document.getElementById("checkedDay").value+"T23:59:59.000Z")).toISOString(),
+          'timeMin': id+"T00:00:01.00Z",
+          'timeMax': id+"T23:59:59.00Z",
           'showDeleted': false,
           'singleEvents': true,
-          'maxResults': 50,
+          'maxResults': 15,
           'orderBy': 'startTime'
         }).then(function(response) {
           var events = response.result.items;
@@ -143,13 +143,13 @@ function wybierzDzien(id,rok,miesiac){
               }
               
               if(attrib=="what_three"){
-              eventsy+="<div id='"+event.id+"'><div class='time'>Poczatek:<br>"+event.start.dateTime.toString().substring(5,10)+"<br>Koniec:<br>"+event.end.dateTime.toString().substring(5,10)+"</div><div class='what'><p>"+event.summary+"</p></div></div>";
+              eventsy+="<div id='"+event.id+"'><div class='time'>Poczatek:<br>"+event.start.dateTime.toString().substring(11,16)+"<br>Koniec:<br>"+event.end.dateTime.toString().substring(11,16)+"</div><div class='what'><p>"+event.summary+"</p></div></div>";
               attrib="what";
               }else if(attrib=="what"){
-			  eventsy+="<div id='"+event.id+"'><div class='time_two'>Poczatek:<br>"+event.start.dateTime.toString().substring(5,10)+"<br>Koniec:<br>"+event.end.dateTime.toString().substring(5,10)+"</div><div class='what_two'><p>"+event.summary+"</p></div></div>";
+			  eventsy+="<div id='"+event.id+"'><div class='time_two'>Poczatek:<br>"+event.start.dateTime.toString().substring(11,16)+"<br>Koniec:<br>"+event.end.dateTime.toString().substring(11,16)+"</div><div class='what_two'><p>"+event.summary+"</p></div></div>";
 				attrib="what_two";
-			  }else if(attrib=="what"){
-			  eventsy+="<div id='"+event.id+"'><div class='time_three'>Poczatek:<br>"+event.start.dateTime.toString().substring(5,10)+"<br>Koniec:<br>"+event.end.dateTime.toString().substring(5,10)+"</div><div class='what_three'><p>"+event.summary+"</p></div></div>";
+			  }else if(attrib=="what_two"){
+			  eventsy+="<div id='"+event.id+"'><div class='time_three'>Poczatek:<br>"+event.start.dateTime.toString().substring(11,16)+"<br>Koniec:<br>"+event.end.dateTime.toString().substring(11,16)+"</div><div class='what_three'><p>"+event.summary+"</p></div></div>";
 			  attrib="what_three";
 			  }
               
@@ -157,7 +157,7 @@ function wybierzDzien(id,rok,miesiac){
             }
             document.getElementById("sthaa").innerHTML=eventsy;
           } else {
-             document.getElementById("sthaa").innerHTML="<div id=''><div class='time'></div><div class='what'><p>Nie znaleziono nachodzących zdarzeń</p></div></div>";
+             document.getElementById("sthaa").innerHTML="<div id=''><div class='time'></div><div class='what_two'><p>Nie znaleziono nachodzących zdarzeń</p></div></div>";
           }
         });
 }

@@ -88,7 +88,21 @@
     };
 
     cancelImport=function(){
-
+		gapi.client.calendar.events.list({
+          'calendarId': 'primary',
+          'showDeleted': false,
+          'singleEvents': true,
+          'maxResults': 150,
+          'orderBy': 'startTime'
+        }).then(function(response) {
+          var events = response.result.items;
+          if (events.length > 0) {
+            for (i = 0; i < events.length; i++) {
+              if(events[i].location=="UEK");
+				console.log(events[i].location);
+            }
+          }
+        });
     	
     }
 
@@ -106,6 +120,7 @@
       dialogClass: 'formularz-importu',
       buttons: {
         "Importuj do kalendarza": importuj,
+        "Cofnij import": cancelImport,
         Cancel: function() {
           dialog.dialog( "close" );
           $( "#okienko_importu" ).css("visibility","hidden");
@@ -121,6 +136,8 @@
     $( "#plan_zajec_btn" ).button().on( "click", function() {
       dialog.dialog( "open" );
     });
+    
+    
   } );
 
 	

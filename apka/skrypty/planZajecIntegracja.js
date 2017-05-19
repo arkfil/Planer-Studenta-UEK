@@ -91,6 +91,7 @@
 		gapi.client.calendar.events.list({
           'calendarId': 'primary',
           'showDeleted': false,
+          'timeMin': "2017-4-10T00:00:01.00Z",
           'singleEvents': true,
           'maxResults': 150,
           'orderBy': 'startTime'
@@ -98,8 +99,24 @@
           var events = response.result.items;
           if (events.length > 0) {
             for (i = 0; i < events.length; i++) {
-              if(events[i].location=="UEK");
-				console.log(events[i].location);
+              if(events[i].location=="UEK"){
+				
+				  var params = {
+					calendarId: 'primary',
+					eventId: events[i].eventId,
+				  };
+
+				  calendar.events.delete(params, function(err) {
+					if (err) {
+					  console.log('Blad API: ' + err);
+					}else
+						console.log('Zdarzenie usuniete');
+				  });
+				
+				
+				
+				//console.log(events[i].location);
+			  }
             }
           }
         });

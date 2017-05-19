@@ -1,12 +1,12 @@
 function zapiszNotatke(){
 	var tresc = document.getElementById("notepad_ex").value;
-	zapiszCookie("notatka",tresc,733);
+	zapiszCookie("notatka",tresc,1733);
 	console.log( "Zapis notatki: " + tresc );
 }
 
 $( "#notepad_ex" ).ready(function() {
 	var notatka=odczytajCookie("notatka");
-	if(notatka!=undefined||notatka!=""){
+	if(notatka!=undefined||notatka!=""||notatka!="undefined"){
 		console.log("Notatka: "+ notatka );
 		document.getElementById("notepad_ex").value=notatka;
 	}

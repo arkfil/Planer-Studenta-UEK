@@ -13,7 +13,7 @@ $( "#notepad_ex" ).ready(function() {
 
 
 function zapiszCookie(nazwa,tresc,dni) {
-    var wydasa = "";
+    var wygasa = "";
     if (dni) {
         var date = new Date();
         date.setTime(date.getTime() + (dni*24*60*60*1000));

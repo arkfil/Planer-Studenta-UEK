@@ -106,7 +106,7 @@
 					calendarId: 'primary',
 					eventId: events[i].id,
 				  });
-				  
+				   
 				  request.execute(function(resp) {
 						console.log(resp);
 				  });	

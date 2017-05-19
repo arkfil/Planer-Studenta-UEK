@@ -3,13 +3,21 @@
 <head>
 	<script type="text/javascript" src="./skrypty/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="./skrypty/angular.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 	
 	<script type="text/javascript" src="./skrypty/kalendarzApp.js"></script>
 	<script type="text/javascript" src="./skrypty/kalendarzController.js"></script>
+	<script type="text/javascript" src="./skrypty/formularz_zdarzenia.js"></script>
+		<script type="text/javascript" src="./skrypty/IntegracjaKalendarz.js"></script>
+
 
 	<link rel="stylesheet" type="text/css" href="./style/kalendarz_style.css">
 	<link rel="stylesheet" type="text/css" href="./style/apka_style.css">
 	<link rel="stylesheet" type="text/css" href="./style/notatki_style.css">
+	<link rel="stylesheet" type="text/css" href="./style/ekran_autoryzacji_style.css">
+	<link rel="stylesheet" type="text/css" href="./style/formularz_zdarzenia_style.css">
+	
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,6 +27,14 @@
 </head>
 
 <body>
+<input style="display: none" id="checkedDay" name="articleid" type="hidden" value="" />
+<div id="cover">
+		<div id="wrapper">
+			<p id="greetings">Drogi użytkowniku, w celu korzystanie z aplikacji konieczna jest autoryzacja w<br>usłudze Kalendarz Google</p>
+			<button id="authorize-button" style="display: block;">Autoryzuj</button>
+		</div>
+</div>
+	
 	<div class="container">
 		<div class="left">
 			<div class="data" ng-app="myApp" ng-controller="MainCtrl">
@@ -36,7 +52,7 @@
 				<div class="title">
 					<h1>Twoje wydarzenia</h1>
 				</div>
-				<ul class="sthaa">
+				<ul class="sthaa" id="sthaa">
 					<div>
 						<div class="time"></div>
 						<div class="what"></div>
@@ -76,12 +92,31 @@
 				</ul>
 			</div>
 			<div class="add">
-				<button type="button" name="" value="" class="add_button">Dodaj wydarzenie</button>
+				<button type="button" name="" value="" class="add_button" id="add_button">Dodaj wydarzenie</button>
 			</div>
+			
 		</div>
 	
 	</div>
+	
+<div id="okienko_zdarzenia" title="Tworzenie nowego zdarzenia">
+  <form>
+    <fieldset>
+      <label for="godz_rozpoczecia">Godzina rozpoczecia gg:mm</label>
+      <input type="time" name="godz_rozpoczecia" id="godz_rozpoczecia" value="" class="text ui-widget-content ui-corner-all">
+      <label for="godz_zakonczenia">Godzina zakonczenia gg:mm</label>
+      <input type="time" name="godz_zakonczenia" id="godz_zakonczenia" value="" class="text ui-widget-content ui-corner-all">
+      <label for="opis_zdarzenia">Opis</label>
+      <input type="text" name="opis_zdarzenia" id="opis_zdarzenia" value="" class="text ui-widget-content ui-corner-all">
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+    </fieldset>
+  </form>
+</div>
 
+  <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 
 </body>
 

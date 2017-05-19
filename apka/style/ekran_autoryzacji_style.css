@@ -1,0 +1,44 @@
+#cover{
+    opacity:0.8;
+    background-color:#ccc;
+    position:fixed;
+    width:100%;
+    height:100%;
+    visibility: hidden;
+    top:0px;
+    left:0px;
+    z-index:1000;
+}
+
+#authorize-button{
+	width: 300px;
+	height: 130px;
+	left:50%;
+	opacity:1;
+	background-color:#111CAB;
+    border: none;
+    color: black;
+    visibility: hidden;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#greetings{
+ font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+ font-weight: normal;
+        font-size: 1.75em;
+ letter-spacing: .2em;
+ line-height: 1.1em;
+  visibility: hidden;
+ margin:0px;
+ text-align: center;
+ text-transform: uppercase;
+
+}
+

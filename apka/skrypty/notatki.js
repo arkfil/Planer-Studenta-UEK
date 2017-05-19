@@ -6,7 +6,7 @@ function zapiszNotatke(){
 
 $( "#notepad_ex" ).ready(function() {
 	var notatka=odczytajCookie("notatka");
-	if(notatka!=undefined||notatka!=""||notatka!="undefined"){
+	if(notatka!=undefined||notatka!=""||notatka!="undefined"||notatka!=null){
 		console.log("Notatka: "+ notatka );
 		document.getElementById("notepad_ex").value=notatka;
 	}

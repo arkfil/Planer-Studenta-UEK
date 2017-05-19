@@ -123,7 +123,7 @@
 					msc=msc.substring(4,4);
 			       wybierzDzien(document.querySelector("#checkedDay").value,document.querySelector("#checkedDay").value.substring(0,3),msc);
 			       	 $( "#okienko_importu" ).css("visibility","hidden");
-			      alert("Plan zostal zainportowany do kalendarza.");
+			      alert("Usunieto z planu wpisy zwiazane z zajeciami na UEK.");
             
           }
         });

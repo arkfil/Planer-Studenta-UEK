@@ -106,7 +106,7 @@
 					eventId: events[i].eventId,
 				  };
 
-				  calendar.events.delete(params, function(err) {
+				  gapi.client.calendar.events.delete(params, function(err) {
 					if (err) {
 					  console.log('Blad API: ' + err);
 					}else

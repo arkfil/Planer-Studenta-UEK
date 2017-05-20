@@ -1,11 +1,52 @@
 .formularz-importu {
-    background-color:#f2f2f2;
+    background-color:black;
     z-index:1000;
     padding: 8px;
     opacity:0.99;
     border: none;
     border-radius: 6px;
+	color:black;
+	background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.9));
+	font-family: "Franklin Gothic Medium";
+}
+.import_title {
+	color:white;
+	text-align:center;
+	font-size:24px;
+	margin-bottom:200px;
+	font-family: "Franklin Gothic Medium";
+}
+
+.ui-dialog-title {	
+	color:white;
+	font-size:20px;
+	font-family: "Franklin Gothic Medium";
+	margin-left:25px;
 }
 okienko_zdarzenia{
 	visibility: hidden;
+}
+.ui-buttons {
+	color:blue;
+}
+button {
+	border: 1px solid white;
+    color: white;
+	opacity:0.8;
+	border-radius: 200px;
+    padding: 10px 22px;
+	margin:15px 5px 0 5px;
+	background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.7));
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+button:hover {
+	background: linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 1));
+	opacity:1;
+	border:2px solid white;
+}
+button:focus {
+	outline: none;
 }

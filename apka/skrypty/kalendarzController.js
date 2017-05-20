@@ -104,7 +104,7 @@ var rok = $( "#rok" ).text();
 		//parent.document.getElementById("calendarHolder").reload();
 		
 		var a=document.getElementById(document.getElementById("checkedDay").value);
-		if(a!=null) a.style.background = "blue";
+		if(a!=null) a.style.background = "black";
 
 }
 
@@ -118,7 +118,7 @@ function wybierzDzien(id,rok,miesiac){
 		console.log(rok+"-"+miesiac+"-"+i);
 	};
 
-	document.getElementById(id).style.background = "blue";
+	document.getElementById(id).style.background = "grey";
 	document.getElementById("checkedDay").value = id;
 
 	 gapi.client.calendar.events.list({

@@ -37,16 +37,24 @@
     }
     .left_but {
       position: absolute;
-      top: -4px;
+      top: -15px;
 	  left: 0;
 	  width:10px;
+	  border:none;
+	  background:none;
     }
 	.right_but {
       position: absolute;
 	  width: 0px;
-      top: -4px;
+      top: -15px;
 	  right: 0;
+	  border:none;
+	  background:none;
     }
+	.left_but:hover,
+	.right_but:hover {
+		border:none;
+	}
     table {
       background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.7));
       border-collapse: collapse;

@@ -1,17 +1,24 @@
 input.text { 
 	margin-bottom:12px; 
+	margin-top:12px;
 	width:95%; 
 	padding: .4em; 
 }
-
-fieldset { 
+title {
+	color:yellow;
+}
+.add_window { 
 	padding:0; 
 	border:0; 
-	margin-top:100px; 
+	margin-top:20px; 
 }
-
+#okienko_zdarzenia {
+	text-align:center;
+}
 .formularz-zdarzenia {
-    background-color:#f2f2f2;
+    background-color:black;
+	background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.9));
+	font-family: "Franklin Gothic Medium";
     z-index:1000;
     padding: 8px;
     opacity:0.99;
@@ -45,4 +52,9 @@ input[type=submit]:hover {
 
 okienko_zdarzenia{
 	visibility: hidden;
+}
+
+label {
+	color:white;
+	margin-bottom:30px;
 }

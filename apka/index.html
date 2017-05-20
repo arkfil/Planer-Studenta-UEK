@@ -85,12 +85,12 @@
 	
 <div id="okienko_zdarzenia" style="visibility:hidden" title="Tworzenie nowego zdarzenia">
   <form>
-    <fieldset>
-      <label for="godz_rozpoczecia">Godzina rozpoczecia gg:mm</label>
+    <fieldset class="add_window">
+      <label for="godz_rozpoczecia" class="time_text">Godzina rozpoczecia gg:mm</label>
       <input type="time" name="godz_rozpoczecia" id="godz_rozpoczecia" value="" class="text ui-widget-content ui-corner-all">
-      <label for="godz_zakonczenia">Godzina zakonczenia gg:mm</label>
+      <label for="godz_zakonczenia" class="time_text">Godzina zakonczenia gg:mm</label>
       <input type="time" name="godz_zakonczenia" id="godz_zakonczenia" value="" class="text ui-widget-content ui-corner-all">
-      <label for="opis_zdarzenia">Opis</label>
+      <label for="opis_zdarzenia" class="time_text">Opis</label>
       <input type="text" name="opis_zdarzenia" id="opis_zdarzenia" value="" class="text ui-widget-content ui-corner-all">
       <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
     </fieldset>
@@ -99,7 +99,7 @@
 
 <div id="okienko_importu" style="visibility:hidden" title="Import planu zajec UEK do kalendarza Google" class="import_title">
   <form>
-    <fieldset>
+    <fieldset class="import_window">
       <label for="linkHt">Godzina rozpoczecia gg:mm</label>
       <input type="text" name="linkHt" id="linkHt" value="" class="text ui-widget-content ui-corner-all">
       <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">

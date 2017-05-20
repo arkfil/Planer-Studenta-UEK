@@ -1,22 +1,27 @@
 .notes_title {
 	color: white;
+	opacity:0.7;
 	margin-left:90px;
-	font-family: "Comic Sans MS";
+	font-family: "Franklin Gothic Medium";
 }
 .notepad {
 	width:240px;
 	height:190px;
-	background-color:#64FFDA;
+	background-color:black;
 	margin-left:30px;
 	opacity:0.5;
 }
 .notepad_ex {
+	color:white;
 	width: 98%;
 	height: 99%;
 	resize: none;
 	display: block;
 	margin-bottom: 10px;
-    	background-color: transparent;
+    background-color: transparent;
 	overflow: auto;
-
+}
+.notepad:hover {
+	background: linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.7));
+	opacity:1;
 }

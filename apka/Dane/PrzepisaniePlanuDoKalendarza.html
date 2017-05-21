@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Funkcja przepisanie planu zajęć UEK do kalendarza</title>
+    <meta charset='utf-8' />
+	<script src="http://code.jquery.com/jquery-git2.js"></script>
+	
+	
+  </head>
+  
+  <body>
+    <p>Podaj link do swojego planu zajec: </p>
+    <p><label>Link: <input type="text" id="linkHt"></label></p>
+    <p><button id="dodajDoKalendarza" style="display: block;">Zaimportuj do kalendarza</button></p>
+	<div id="mostImp" style="display: block;"></div>
+
+    <script>
+		var link = document.querySelector("#linkHt").value;
+		var przyciskDolaczania = document.getElementById('dodajDoKalendarza');
+		przyciskDolaczania.onclick = function(event) {
+		
+		//console.log(link);
+
+		link = document.querySelector("#linkHt").value;
+		
+		var strona = "http://v-ie.uek.krakow.pl/~s186287/IntegracjaZKalendarzem/posrednikXml.php/?linkDoPlanu="+link;
+		console.log(strona);
+		$.get(strona, function( kod ) {
+	//		console.log(kod);
+
+			populujListe(kod);
+		});
+		
+		};
+		
+		
+		function doKalendarza(data,opis,odGodziny,doGodziny){
+			console.log(data+", "+odGodziny+", "+doGodziny +": "+opis);
+		}
+		
+		function populujListe(kod){
+			var data="";
+			
+			
+			
+			for (var i = 0, len = kod.length; i < len; i++) {
+				switch(kod[i]){
+					case "%":
+						i++;
+						data="";
+						while(kod[i]!="%"){
+							data+=kod[i];
+							++i;
+						}
+						
+						break;
+
+					case "#":
+						++i; //#
+						var odGodziny=kod[i]+kod[i+1]+kod[i+2]+kod[i+3]+kod[i+4];
+						i+=7;
+						var doGodziny=kod[i]+kod[i+1]+kod[i+2]+kod[i+3]+kod[i+4];
+						i+=7;
+						var opis="Prowadzacy: ";
+						while(kod[i]!="@"){
+							opis+=kod[i];
+							++i;
+						}
+						++i;//@
+						opis+=", Przedmiot: ";
+						++i;//$
+						while(kod[i]!="$"){
+							opis+=kod[i];
+							++i;
+						}
+						++i;//$
+						opis+=", ";
+						++i;//^
+						while(kod[i]!="^"){
+							opis+=kod[i];
+							++i;
+						}
+						++i//^
+						opis+=", sala:";
+						++i;//{
+						//++i;
+						while(kod[i]!="{"){
+							opis+=kod[i];
+							++i;
+						}
+						++i;//{
+						opis+=", uwagi: ";
+						++i;//}
+						while(kod[i]!="}"){
+							opis+=kod[i];
+							++i;
+						}
+						//++i;//}
+						
+						doKalendarza(data,opis,odGodziny,doGodziny);
+						
+						break;
+				}
+				
+				
+					
+			}
+				
+		}
+			
+			
+		
+/*			var startMiesiac = parseInt(start.substring(5,7));
+			var startDzien = parseInt(start.substring(8,10));
+			var startRok = parseInt(start.substring(0,4));
+			var stopMiesiac = parseInt(stop.substring(5,7));
+			var stopDzien = parseInt(stop.substring(8,10));
+			var stopRok = parseInt(stop.substring(0,4));
+			
+			while(startMiesiac<=stopMiesiac){
+				
+				
+// Wywolanie http://v-ie.uek.krakow.pl/~s186287/IntegracjaZKalendarzem/posrednikXml.php/?linkDoPlanu=http://planzajec.uek.krakow.pl/index.php?typ=G&id=126801&okres=1&dzien=2017-05-18
+				var startDnStr = startDzien.toString();
+				var startMsStr = startMiesiac.toString();
+				if(startDnStr.length<2)
+					startDnStr = "0"+startDnStr;
+				if(startMsStr.length==1)
+					startMsStr = "0"+startMsStr;
+				$( "mostImp" ).append("AAAAAAAAAAAAA");
+				$.get("http://v-ie.uek.krakow.pl/~s186287/planerUEK/posrednikXml.php/?linkDoPlanu="+link+"&dzien="+startRok+"-"+startMsStr+"-"+startDnStr, function( planDnia ) {
+					
+					$( "mostImp" ).append(planDnia);
+					
+					
+					//wstawNaListe(planDnia);
+				});
+				
+				
+				
+				if(startDzien==31){
+					++startMiesiac;
+					startDzien=1;
+				}else
+					++startDzien;				
+			}
+		}
+
+
+		// 2017-02-20 do Mon Feb 20 2017
+		function formatowanieDaty(data){
+			return new Date(data.substring(0,4),(parseInt(data.substring(5,7))-1),data.substring(8,10));	
+		}
+
+*/
+
+    </script>
+
+  </body>
+</html>

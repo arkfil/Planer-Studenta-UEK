@@ -13,13 +13,13 @@
 	color:white;
 	text-align:center;
 	font-size:24px;
-	margin-bottom:200px;
+	margin-bottom:300px;
 	font-family: "Franklin Gothic Medium";
 }
 .import_window { 
 	padding:0; 
 	border:0; 
-	margin-top:90px; 
+	margin-top:30px; 
 }
 .ui-dialog-title {	
 	color:white;
@@ -30,7 +30,13 @@
 	text-align:center;
 	margin-top:30px;
 }
-okienko_zdarzenia{
+#okienko_importu {
+	font-size:18px;
+}
+#linkHt {
+	margin-bottom:30px;
+}
+#okienko_zdarzenia{
 	visibility: hidden;
 }
 .ui-buttons {

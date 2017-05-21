@@ -14,5 +14,5 @@ $( "#przystanekKoncowy" ).ready(function() {
 	var przystanek2=odczytajCookie("przystanekKoncowy");
 
 	document.getElementById("przystanekPoczatkowy").value=przystanek1;
-	document.getElementById("przystanekKoncowy").value=przystanek2;
+	document.getElementById("przystanekKoncowy").value=przystanek2; 
 });

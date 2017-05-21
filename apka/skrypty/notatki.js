@@ -6,10 +6,17 @@ function zapiszNotatke(){
 
 $( "#notepad_ex" ).ready(function() {
 	var notatka=odczytajCookie("notatka");
-	if(notatka!=undefined||notatka!=""||notatka!="undefined"||notatka!=null){
+	if (typeof notatka !== 'undefined') {
 		console.log("Notatka: "+ notatka );
 		document.getElementById("notepad_ex").value=notatka;
-	}
+	}else
+        notatka=odczytajCookie("notatka");
+    
+    if (typeof notatka !== 'undefined')
+            document.getElementById("notepad_ex").value=notatka;
+    
+
+
 });
 
 

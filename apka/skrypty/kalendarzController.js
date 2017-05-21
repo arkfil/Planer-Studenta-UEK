@@ -127,7 +127,7 @@ function wybierzDzien(id,rok,miesiac){
           'timeMax': id+"T23:59:59.00Z",
           'showDeleted': false,
           'singleEvents': true,
-          'maxResults': 50,
+          'maxResults': 70,
           'orderBy': 'startTime'
         }).then(function(response) {
           var events = response.result.items;
@@ -143,13 +143,26 @@ function wybierzDzien(id,rok,miesiac){
               
              
               eventsy+="<div id='"+event.id+"'><div class='time'><br>"+event.start.dateTime.toString().substring(11,16)+"<br>"+event.end.dateTime.toString().substring(11,16)+"</div><div class='what'><p>"+event.summary+"</p></div></div>";
-            
+              
+              if(i==events.length-1){
+              	var nazwaPrzystanku = odczytajCookie("przystanekPoczatkowy");
+              	if (typeof nazwaPrzystanku !== 'undefined') {
+              	
+			   	 eventsy+="<div><div class='time'></div><div class='what'><p>Tramwaje z "+nazwaPrzystanku+": <b id='coos'></b></p></div></div>";
+              	 
+	             zwrocGodzinyKomunikacji(event.end.dateTime);
+
+              	}
+
+              }
+
+
               
               //appendPre('Zdarzenie o id: ' + event.id + ' i nazwie: ' + event.summary + ', Poczatek: ' + event.start.dateTime + ', Koniec: ' + event.end.dateTime +', Lokalizacja zdarzenia: ' +event.location);
             }
             document.getElementById("sthaa").innerHTML=eventsy;
           } else {
-             document.getElementById("sthaa").innerHTML="<div id=''><div class='time'></div><div class='what'><p>Nie znaleziono nachodzących zdarzeń</p></div></div>";
+             document.getElementById("sthaa").innerHTML="<div id=''><div class='time'></div><div class='what'><br><p>Nie znaleziono nachodzących zdarzeń</p></div></div>";
           }
         });
 }

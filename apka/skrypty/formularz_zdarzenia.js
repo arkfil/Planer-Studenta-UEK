@@ -12,8 +12,47 @@
 		 	console.log(userChoices);
 		 	if (userChoices) 
 		  	createEvent(userChoices);
-		  	dialog.dialog( "close" );
+		  	;
+			//console.log("KRZYCZE LALLALALLALAALLALALALLALALALLLALALAALLALA");
+			
+		 
+		 dialog.dialog( "close" );
+		 var ajdek=document.querySelector("#checkedDay").value;
+		 var rok=ajdek.substring(0,4);
+		 ajdek = ajdek.substring(5);
+		 var index =ajdek.search("-");
+		 var msc = ajdek.substring(0,index);
+		 /*
+			var ajdek=document.querySelector("#checkedDay").value;
+			   console.log("               AAAAAAAAAAJDEKKKKKKKKKK                                 "+ajdek);
+			   
+			   			   console.log("               ROOOOOOOOOOKKKKK                                 "+rok);
+			   
+			   
+				console.log("               MSSCCCCCCCCC                                 "+miesiaczek);
+			
+				if(miesiaczek.length==1)
+					miesiaczek = "0"+miesiaczek;
+		 console.log("               MSSCCCCCCCCC                                 "+miesiaczek);
+		  	 var msc=document.querySelector("#checkedDay").value;
+			      
+			      // Odswiezenie listy zdarzen dla dnia
+			      if(msc.length==10)
+					msc=msc.substring(4,5);
+			      else
+					msc=msc.substring(4,4);
+				wybierzDzien(document.querySelector("#checkedDay").value,rok,miesiaczek);
+*/
+			// console.log("               ROOOOOOOOOOKKKKK                                 "+rok);
+		//	 console.log("               MSSCCCCCCCCC                                 "+msc);
+			//wybierzDzien("2017-5-5",rok,msc);
+	//		console.log("                  Takisedzien NO:"+document.querySelector("#checkedDay").value);
+				       wybierzDzien(document.querySelector("#checkedDay").value,rok,msc);
+			$( "#okienko_zdarzenia" ).css("visibility","hidden");
+			alert("Zdarzenie zostalo dodane.");
     };
+	
+
 	
     dialog = $( "#okienko_zdarzenia" ).dialog({
       autoOpen: false,
@@ -23,7 +62,6 @@
       open: function(event, ui) {
         $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
         	 $( "#okienko_zdarzenia" ).css("visibility","visible");
-
 	  },
       dialogClass: 'formularz-zdarzenia',
       buttons: {
@@ -88,13 +126,13 @@ function createEvent(eventData) {
     // execute the request and do something with response
     request.execute(function(resp) {
       console.log(resp);
-      var msc=document.querySelector("#checkedDay").value;
-      if(msc.length==10)
-		msc=msc.substring(4,5);
-      else
-		msc=msc.substring(4,4);
-       wybierzDzien(document.querySelector("#checkedDay").value,document.querySelector("#checkedDay").value.substring(0,3),msc);
-       	 $( "#okienko_zdarzenia" ).css("visibility","hidden");
-      alert("Zdarzenie zostalo dodane do kalendarza.");
+ 
+
     });
+    
+    
+ 
+        
+
 }
+

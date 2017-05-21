@@ -61,25 +61,15 @@
 		          				console.log("in update signing status");
 
         if (isSignedIn) {
-     //     divAutoryzacji.style.display = 'none';
           divAutoryzacji.style.visibility = 'hidden';
           napis.style.visibility = 'hidden';
           przyciskAutoryzacji.style.visibility = 'hidden';
-      //    przyciskWylogowania.style.display = 'block';
-      //    przyciskWylogowania.style.visibility = 'visible';
-     //     przyciskDodawania.style.display = 'block';
-      //    przyciskDodawania.style.visibility = 'visible';
+
     //      listUpcomingEvents();
         } else {
-        //  przyciskAutoryzacji.style.display = 'block';
                    divAutoryzacji.style.visibility = 'visible';
 					napis.style.visibility = 'visible';
           przyciskAutoryzacji.style.visibility = 'visible';
-          //przyciskWylogowania.style.display = 'none';
-          //          przyciskWylogowania.style.visibility = 'hidden';
-
-        //  przyciskDodawania.style.display = 'none';
-          //          przyciskDodawania.style.visibility = 'hidden';
 
         }
       }
@@ -99,37 +89,3 @@
         pre.appendChild(textContent);
       }
 */
-      /**
-       * Drukuje 20 zdarzeń z kalenarza
-       * Jeżeli nie znaleziono zdarzeń, wyświetli się informacja
-       */
-/*      function listUpcomingEvents() {
-        gapi.client.calendar.events.list({
-          'calendarId': 'primary',
-          'timeMin': (new Date()).toISOString(),
-          'showDeleted': false,
-          'singleEvents': true,
-          'maxResults': 25,
-          'orderBy': 'startTime'
-        }).then(function(response) {
-          var events = response.result.items;
-          appendPre('Zbliżające się zdarzenia:');
-
-          if (events.length > 0) {
-            for (i = 0; i < events.length; i++) {
-              var event = events[i];
-              var when = event.start.dateTime;
-              if (!when) {
-                when = event.start.date;
-              }
-              appendPre('Zdarzenie o id: ' + event.id + ' i nazwie: ' + event.summary + ', Poczatek: ' + event.start.dateTime + ', Koniec: ' + event.end.dateTime +', Lokalizacja zdarzenia: ' +event.location);
-            }
-          } else {
-            appendPre('Nie znaleziono nachodzących zdarzeń');
-          }
-        });
-      }
-
-*/
-
-

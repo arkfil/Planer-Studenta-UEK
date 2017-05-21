@@ -34,6 +34,7 @@
 
 <body>
 <input style="display: none" id="checkedDay" name="articleid" type="hidden" value="" />
+
 <div id="cover">
 		<div id="wrapper">
 			<p id="greetings">Drogi użytkowniku, w celu korzystania z aplikacji konieczna jest autoryzacja w<br>usłudze Kalendarz Google</p>
@@ -76,7 +77,7 @@
 			</div>
 			<div class="add">
 				<button type="button" name="" value="" class="add_button" id="add_button">Dodaj wydarzenie</button>
-				<button type="button" name="" value="" class="add_button" id="plan_zajec_btn">Importuj plan do kalendarza</button>
+				<button type="button" name="" value="" class="add_button" id="plan_zajec_btn">Dodatkowe opecje</button>
 			</div>
 			
 		</div>
@@ -97,11 +98,17 @@
   </form>
 </div>
 
-<div id="okienko_importu" style="visibility:hidden" title="Import planu zajec UEK do kalendarza Google" class="import_title">
+<div id="okienko_importu" style="visibility:hidden" title="Dodatkowe opcje" class="import_title">
   <form>
     <fieldset class="import_window">
-      <label for="linkHt">Podaj link do planu zajęć</label>
+      <label for="linkHt">W celu importu planu zajęć UEK do kalendarza podaj do niego link</label>
       <input type="text" name="linkHt" id="linkHt" value="" class="text ui-widget-content ui-corner-all">
+      
+      <label for="linia">Podaj interesujaca cie linie komunikacji miejskiej</label>
+      <input type="text" name="linia" id="linkHt" value="" class="text ui-widget-content ui-corner-all">
+	  <label for="linia">Podaj interesujaca cie linie komunikacji miejskiej</label>
+      <input type="text" name="linia" id="linkHt" value="" class="text ui-widget-content ui-corner-all">
+      
       <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
     </fieldset>
   </form>
@@ -116,3 +123,4 @@
 </body>
 
 </html>
+

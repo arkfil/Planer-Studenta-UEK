@@ -74,11 +74,15 @@
 				
 			}
 			dialog.dialog( "close" );
-			      var msc=document.querySelector("#checkedDay").value;
-			      if(msc.length==10)
+			    //  var msc=document.querySelector("#checkedDay").value;
+			     /* if(msc.length==10)
 					msc=msc.substring(4,5);
 			      else
-					msc=msc.substring(4,4);
+					msc=msc.substring(4,4);*/
+					var ajdek=document.querySelector("#checkedDay").value;
+					 ajdek = ajdek.substring(5);
+					 var index =ajdek.search("-");
+					 var msc = ajdek.substring(0,index);
 			       wybierzDzien(document.querySelector("#checkedDay").value,document.querySelector("#checkedDay").value.substring(0,3),msc);
 			       	 $( "#okienko_importu" ).css("visibility","hidden");
 			      alert("Plan zostal zainportowany do kalendarza.");
@@ -117,10 +121,16 @@
             
             dialog.dialog( "close" );
 			      var msc=document.querySelector("#checkedDay").value;
-			      if(msc.length==10)
+			    /*  if(msc.length==10)
 					msc=msc.substring(4,5);
 			      else
-					msc=msc.substring(4,4);
+					msc=msc.substring(4,4);*/
+					 var ajdek=document.querySelector("#checkedDay").value;
+					 ajdek = ajdek.substring(5);
+					 var index =ajdek.search("-");
+					 var msc = ajdek.substring(0,index);
+			      
+					
 			       wybierzDzien(document.querySelector("#checkedDay").value,document.querySelector("#checkedDay").value.substring(0,3),msc);
 			       	 $( "#okienko_importu" ).css("visibility","hidden");
 			      alert("Usunieto z planu wpisy zwiazane z zajeciami na UEK.");
